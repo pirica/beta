@@ -1,0 +1,24 @@
+.center {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.center > img {
+    animation: 1s cubic-bezier(0.02, 1.15, 0.67, 0.13) 1 BetaAnimation;
+    /* animation: 1s cubic-bezier(0.02, 1.15, 0.67, 0.13) infinite BetaAnimation; */
+    position: relative;
+    image-rendering: pixelated;
+}
+
+@keyframes BetaAnimation {
+    0% {
+        transform: translate(-100vh, -100vh);
+    }
+}
