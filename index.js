@@ -1,10 +1,20 @@
+class User {
+    constructor(user) {
+        this.id = user.id;
+        this.name = user.username;
+        this.avatar = `https://cdn.discordapp.com/avatars/${this.id}/${user.avatar}.webp?size=128`;
+        this.discriminator = user.discriminator;
+        this.locale = user.locale;
+    }
+}
+
 class Client {
     constructor() {
         this.url = 'http://api.blobry.com';
     }
 
     async getUser() {
-        return (await this.sendRequest('user')).json();
+        return new User((await this.sendRequest('user')).json());
     }
 
     async sendRequest(path, options) {
